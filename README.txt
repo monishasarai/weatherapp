@@ -14,6 +14,19 @@
 
 #Exp-5
 
+#Exp-6
+
+#Exp-7
+Multimodule maven
+
+#Exp-8
+Jenkins 
+Java and Maven
+**/*.war
+https://localhost:6060/manager/text
+deploy
+deploy123
+
 #Exp-9
 
 **PIPELINE CODE**
