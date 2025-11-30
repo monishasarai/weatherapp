@@ -1,0 +1,141 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+    color: #fff;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out;
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header Styling */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    padding: 12px;
+    width: 200px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #00d2ff;
+}
+
+button {
+    padding: 12px 18px;
+    border-radius: 8px;
+    background-color: #00d2ff;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0288d1;
+}
+
+/* Weather Info */
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.weather-info p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Clothing Suggestion */
+#clothingSuggestion {
+    font-style: italic;
+    font-weight: 400;
+    color: #ffeb3b;
+}
+
+/* Sunrise & Sunset */
+p span {
+    color: #ffeb3b;
+}
+
+/* Toggle Button */
+.actions button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #f57c00;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    input {
+        width: 180px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
