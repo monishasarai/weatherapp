@@ -68,7 +68,6 @@ git stash apply                               # Restore stashed changes
 git branch --merged                           # List merged branches
 git branch -d branch1 branch2 branch3         # Delete multiple branches
 
-
 #Exp-3
 ✅ A. Facilitating Collaborative Work by Creating an Organization
 (No Git commands are used here — GitHub UI steps only.)
@@ -153,7 +152,88 @@ Create maven java and web project
 
 #Exp-5
 CLI commands
+docker --version
+mkdir exams
+cd exams
+docker pull ubuntu
+docker run -it -p 9090:80 --name myubuntu12 ubuntu:latest
+apt update
+ls
+cd usr
+ls
+cd share
+ls
+mkdir nginx
+cd nginx
+mkdir html
+cd html
+apt install nano
+nano index.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome user, I'm Monisha Sarai!</h1>
+    <p>You are seeing this page because nginx is successfully installed and running.</p>
 
+    <p>For documentation, visit 
+        <a href="http://nginx.org/">nginx.org</a>.<br>
+        Commercial support available at 
+        <a href="http://nginx.com/">nginx.com</a>.
+    </p>
+
+    <p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+apt install nginx -y
+service nginx start
+docker stop myubuntu12
+docker rm myubuntu12
+docker ps -a
+//extra
+docker pull redis
+docker run --name my-redis -d redis
+docker ps
+docker exec -it myr-redis redis-cli
+SET name "abcd"
+GET name
+docker stop my-redis
+docker ps -a
+docker start my-redis
+docker stop my-redis
+docker rm my-redis
+docker rmi redis
+mkdir ~/DockerProjects/Redis
+cd ~/DockerProjects/Redis
+FROM redis:latest
+CMD ["redis-server"]
+docker build -t redisnew .
+docker run --name myredisnew -d redisnew
+docker stop myredisnew
+docker login
+docker commit id idlecanvas79/redis1
+docker push idlecanvas79/redis1
+docker rm id
+docker rmi idlecanvas79/redis1
+docker logout
+docker pull idlecanvas79/redis1
+docker run --name myredis -d idlecanvas79/redis1
+docker exec -it myredis redis-cli
+SET name ""
+GET name
+exit
+dockr stop myredis
+docker rm id
+docker rmi idlecanvas79/redis1
 
 #Exp-6
 
@@ -169,7 +249,6 @@ deploy
 deploy123
 
 #Exp-9
-
 **PIPELINE CODE**
 H/2 * * * *
 pipeline {
@@ -203,75 +282,48 @@ pipeline {
     }
 }
 
-
 #Exp-10
-
 **MINIKUBE**
-
 minikube start --driver=docker
-
 minikube kubectl -- get pods -A
-
 kubectl version --client
-
 minikube start
-
 kubectl create deployment mynginx --image=nginx
-
 kubectl get deployments
-
 kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
-
 kubectl scale deployment mynginx --replicas=4
-
 kubectl get service mynginx
-
 kubectl port-forward svc/mynginx 8081:80
-
 Open localhost after that delete
-
 kubectl delete deployment mynginx
 kubectl delete service mynginx
-
 minikube stop
-
 minikube delete
-
 **NAGIOS**
-
 docker pull jasonrivers/nagios:latest
-
 docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
 
 #Exp-11
 ngrok authtoken
 ngrok http 8080
-
 webhook in git link/github-webhook/
 application/json
-
 go to jenkins 
 java_build = trigger webhook
-
 email notif
 google activity
 SMTP server-465 port 
 smtp.gmail.com
-
 gmail/password
 SSL 
-
 java_build
 editable notif= project_recipient = recipent,email
-
 advanced settings lo
 add triggers lo always
 
 #Exp-12
-
 **AWS**
 commands:
-
 sudo su
 sudo apt-get update
 sudo apt-get install docker.io
@@ -284,14 +336,8 @@ nano Dockerfile
 after that send ctrl + o && ctrl + x
 sudo docker build -t fileName .
 sudo docker run -d -p 9090:8080 filename //port give the value of the port you gave
-
-
 //SAFE SIDE (Docker compose file):
-
 FROM tomcat:9.0
-
 RUN rm -rf /usr/local/tomcat/webapps/*
-
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
-
 CMD ["catalina.sh", "run"]
