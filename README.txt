@@ -236,6 +236,42 @@ docker rm id
 docker rmi idlecanvas79/redis1
 
 #Exp-6
+# Simple Flask App by Monisha Sarai
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello Monisha Sarai!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+FROM python:3.10-slim
+WORKDIR /app
+COPY app.py /app/
+RUN pip install flask
+CMD ["python", "app.py"]
+# Monisha Sarai – Docker Compose for Flask + MySQL
+version: "3.9"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+
 
 #Exp-7
 Multimodule maven
